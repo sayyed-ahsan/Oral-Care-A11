@@ -6,6 +6,7 @@ const SectionA = () => {
         <div>
             <div>
                 <Lottie animationData={img1} loop={true} className='w-full md:w-[40%]'></Lottie>
+                <h1>this is section A</h1>
             </div>
         </div>
     );
