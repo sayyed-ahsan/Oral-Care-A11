@@ -67,7 +67,12 @@ const Login = () => {
         <div className='login-body'>
             <div class="box">
                 <form class="form" onSubmit={handleSubmit}>
-                    <h2>Sign in </h2>
+                    {/*---------- social login --------------*/}
+                    <span onClick={handleGoogleSignIn} className='g-signin text-center'><FcGoogle className='mx-2'></FcGoogle>sign in with google</span>
+
+                    <span onClick={handleGithubSignIn} className='g-signin text-center my-3'><BsGithub className='mx-2'></BsGithub>sign in with github</span>
+                    {/* ----------------------------------- */}
+                    <h3 className='text-center text-xl mt-8'>------- OR --------</h3>
                     <div class="inputbox">
                         <input type="email" name='email' required="required" />
                         <span>Email </span>
@@ -87,10 +92,8 @@ const Login = () => {
                         : <div class="links">
                             <a><Link className='fs-6' to={'/signup'}>Signup</Link></a>
                         </div>}
-
                     <input type="submit" value="Login" />
-                    <span onClick={handleGoogleSignIn} className='g-signin  text-center'><FcGoogle className='mx-2'></FcGoogle>sign in with google</span>
-                    <span onClick={handleGithubSignIn} className='g-signin text-center'><BsGithub className='mx-2'></BsGithub>sign in with github</span>
+
                 </form>
 
             </div>
