@@ -1,9 +1,27 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const Blog = () => {
+    const blogs = useLoaderData();
+    console.log(blogs)
     return (
         <div>
-            blog
+            {
+                blogs.map((blog, index) =>
+                    <div key={blog._id} className="collapse rounded-box collapse-arrow m-6 border-base-300 bg-base-100">
+                        <input type="checkbox" className="peer" />
+                        <div className="collapse-title ">
+                            {index + 1}.  {blog.qustion}
+                        </div>
+                        <div className="collapse-content ">
+                            <p>{blog.ans}</p>
+                            <p className='text-center mt-3'>{blog.publishedDay} day ago</p>
+                        </div>
+                    </div>
+                )
+            }
+
+
         </div>
     );
 };
