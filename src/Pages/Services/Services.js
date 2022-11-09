@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Services = () => {
     const allService = useLoaderData();
@@ -19,7 +19,9 @@ const Services = () => {
                                 <h2 className="card-title">Shoes!</h2>
                                 <p>If a dog chews shoes whose shoes does he choose?</p>
                                 <div className="card-actions">
-                                    <button className="btn btn-outline btn-success">Show Detail</button>
+                                    <Link to={'/sdetail'}>
+                                        <button className="btn btn-outline btn-success">Show Detail</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
