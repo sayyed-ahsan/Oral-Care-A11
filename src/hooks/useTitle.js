@@ -1,10 +1,10 @@
 
-import { useEffect } from "react"
+// import { useEffect } from "react"
 
-const useTitle = title => {
-    useEffect(() => {
-        document.title = `Oral care - ${title}`;
-    }, [title])
-};
+// const useTitle = title => {
+//     useEffect(() => {
+//         document.title = `Oral care - ${title}`;
+//     }, [title])
+// };
 
-export default useTitle;
+// export default useTitle;
