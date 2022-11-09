@@ -8,6 +8,7 @@ import Rejister from "../../Pages/Login/Rejister";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
 import ServiceDetail from "../../Pages/ServiceDetail/ServiceDetail";
 import Services from "../../Pages/Services/Services";
+import PrivetRout from "../PrivetRout/PrivetRout";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/blog',
-                element: <Blog></Blog>,
+                element: <PrivetRout><Blog></Blog></PrivetRout>,
                 loader: () => fetch('http://localhost:5000/blogs')
             },
             {

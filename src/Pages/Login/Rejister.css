@@ -20,20 +20,20 @@
     background: #23242a;
 }
 
-.box {
+.box-sign {
     position: relative;
     width: 380px;
-    height: 550px;
+    height: 600px;
     background: #5aeba5;
     border-radius: 8px;
     overflow: hidden;
 }
 
-.box::before {
+.box-sign::before {
     content: '';
     position: absolute;
-    top: 100%;
-    left: 100%;
+    top: -50%;
+    left: -50%;
     width: 320px;
     height: 420px;
     background: linear-gradient(0deg, transparent, var(--color),
@@ -42,11 +42,11 @@
     animation: animate 6s linear infinite;
 }
 
-.box::after {
+.box-sign::after {
     content: '';
     position: absolute;
-    top: 100%;
-    left: 100%;
+    top: -50%;
+    left: -50%;
     width: 320px;
     height: 420px;
     background: linear-gradient(10deg, transparent, var(--color),
@@ -160,29 +160,15 @@ input[type="submit"] {
     border: none;
     outline: none;
     background: var(--color);
-    padding: 4px 25px;
+    padding: 8px 25px;
     width: 100px;
     margin-top: 10px;
     border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
+    width: 100%;
 }
 
 input[type="submit"]:active {
     opacity: 0.8;
-}
-
-.g-signin {
-    color: white;
-    cursor: pointer;
-    padding: 7px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 18px;
-}
-
-.g-signin:hover {
-    background-color: var(--color);
-    color: #23242a;
-    transition: ease-in 0.3s;
 }

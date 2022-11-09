@@ -5,7 +5,7 @@ const ServicesSection = () => {
         <div>
 
             <p className='text-center text-orange-400 text-6xl'>Services</p>
-            {/* 
+            {/*
             <div className="card w-90 bg-base-100 shadow-xl image-full">
                             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
                             <div className="card-body">
