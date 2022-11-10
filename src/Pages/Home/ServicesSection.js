@@ -29,7 +29,7 @@ const ServicesSection = (props) => {
                                 </figure>
                                 <div className="card-body items-center text-center">
                                     <h2 className="card-title">{service?.sName}</h2>
-                                    <p>{service?.description}</p>
+                                    <p>{service?.description.substring(0, 100) + "..."}</p>
                                     <h3 className='text-white'> Price: {service?.price}/=</h3>
                                     <div>
                                         <div className='flex justify-center items-center'>

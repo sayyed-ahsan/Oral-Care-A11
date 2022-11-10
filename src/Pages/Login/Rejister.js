@@ -13,7 +13,7 @@
 
 
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/Authprovider';
 import useTitle from '../../hooks/useTitle';
 import './Rejister.css'
@@ -24,6 +24,9 @@ const Rejister = () => {
     const { creatUser } = useContext(AuthContext);
     const [error, setError] = useState('');
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -37,6 +40,8 @@ const Rejister = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            navigate(from, { replace: true });
+
             setError('');
         })
             .catch(e => {

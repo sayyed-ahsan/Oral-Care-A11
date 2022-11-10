@@ -19,7 +19,10 @@ const ServiceDetail = () => {
     useEffect(() => {
         fetch(`http://localhost:5000/reviews/${serviceDetails._id}`)
             .then(res => res.json())
-            .then(data => setAllReview(data))
+            .then(data => {
+                setAllReview(data)
+                console.log(data)
+            })
     }, [])
 
 
@@ -30,7 +33,8 @@ const ServiceDetail = () => {
 
     const handleAddReview = event => {
         event.preventDefault();
-        const postReview = { ...userRevies, useremail: user.email, serviceId: serviceDetails._id, time: new Date() }
+        const postReview = { ...userRevies, useremail: user.email, serviceId: serviceDetails._id, serviceName: serviceDetails.sName, time: new Date() }
+        console.log(postReview);
         fetch('http://localhost:5000/review', {
             method: 'POST',
             headers: {
@@ -41,7 +45,10 @@ const ServiceDetail = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    alert('User added successfully');
+                    alert('Review added successfully');
+                    const newallreview = [...allReview, postReview];
+                    setAllReview(newallreview)
+
                     // event.target.reset();
                 }
             })
@@ -63,7 +70,7 @@ const ServiceDetail = () => {
 
     return (
         <div>
-            <div className='m-12'>
+            <div className='m-12 pb-12'>
                 <div className="card lg:card-side bg-base-100 shadow-xl p-3">
                     <figure><img src={serviceDetails.image} alt="Album" /></figure>
                     <div className="card-body max-w-[60%]">
@@ -91,7 +98,7 @@ const ServiceDetail = () => {
             </div>
             {/* ----------- */}
 
-            <h2 className='text-5xl text-center my-5 text-teal-500'>Review Section</h2>
+            <h2 className='text-5xl text-center pt-12 mt-12 text-teal-500'>Review Section</h2>
 
             {
                 user ?
@@ -123,7 +130,16 @@ const ServiceDetail = () => {
             }
 
             {/* ------------- */}
-            <h2 className='text-3xl text-center my-5 text-teal-500'>People Revies {allReview.length}</h2>
+            {
+                allReview.length > 0 ?
+                    <>
+                        <h2 className='text-3xl text-center my-5 pb-12 text-teal-500'>People Revies {allReview.length}</h2>
+                    </>
+                    :
+                    <>
+                        <h2 className='text-3xl text-center my-5 pb-12 text-teal-500'>No Reviews added yet</h2>
+                    </>
+            }
             {
                 allReview.map(review =>
                     <div className='flex justify-center'>
