@@ -12,7 +12,7 @@ const MyReviews = () => {
 
     //-----------
     const handleDelete = id => {
-        // console.log(id)
+        console.log(id)
         const proceed = window.confirm('Are you sure ?');
         if (proceed) {
             fetch(`https://assignment-ii-sayyed-ahsan.vercel.app/review/${id}`, {

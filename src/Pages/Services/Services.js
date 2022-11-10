@@ -4,14 +4,19 @@ import useTitle from '../../hooks/useTitle';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { BsFillStarFill } from 'react-icons/bs';
 import 'react-photo-view/dist/react-photo-view.css';
+import Lottie from "lottie-react";
+import loder from '../../images/lotti/loder.json'
+
 
 const Services = () => {
     useTitle('Services')
     const allService = useLoaderData();
     const img = allService[1].image;
 
-    if (allService.length) {
-        return <h1 className='text-8xl text-center'>Loding...</h1>
+    if (allService.length == 0) {
+        return <div className='flex justify-center'>
+            <div className=' w-1/2 '><Lottie animationData={loder} loop={true} className=''></Lottie></div>
+        </div>
     }
 
 

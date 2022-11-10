@@ -14,7 +14,7 @@ const Header = () => {
                 <Link to={'/'}>
                     <div className='flex justify-center items-center ml-3'>
                         <div><img className='w-9' src={logoimage} alt="" /></div>
-                        <p className=' normal-case text-2xl text-white'>OralCare</p>
+                        <p className=' normal-case text-2xl text-[#31dde8]'>OralCare</p>
                     </div>
                 </Link>
             </div>
@@ -34,7 +34,7 @@ const Header = () => {
                                 <Link to={'/myreviews'}><li>
                                     <div className="avatar">
                                         <div className="w-6 rounded-full">
-                                            <img src="https://placeimg.com/192/192/people" />
+                                            <img src={user.photoURL} />
                                         </div>
                                     </div>
                                 </li></Link>

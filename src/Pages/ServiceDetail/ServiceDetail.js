@@ -17,7 +17,7 @@ const ServiceDetail = () => {
     console.log(allReview)
 
     useEffect(() => {
-        fetch(`https://assignment-ii-sayyed-ahsan.vercel.app/${serviceDetails._id}`)
+        fetch(`https://assignment-ii-sayyed-ahsan.vercel.app/reviews/${serviceDetails._id}`)
             .then(res => res.json())
             .then(data => {
                 setAllReview(data)
@@ -46,7 +46,7 @@ const ServiceDetail = () => {
             .then(data => {
                 if (data.acknowledged) {
                     alert('Review added successfully');
-                    const newallreview = [...allReview, postReview];
+                    const newallreview = [postReview, ...allReview];
                     setAllReview(newallreview)
                     console.log(allReview)
 

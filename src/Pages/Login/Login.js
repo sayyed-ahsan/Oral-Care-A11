@@ -6,12 +6,18 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/Authprovider';
 import useTitle from '../../hooks/useTitle';
+import Lottie from "lottie-react";
+import loder from '../../images/lotti/loder.json'
+
+
+
 
 
 const Login = () => {
     useTitle('Login')
 
-    const { signIn, providerLogin, providerLoginGithub } = useContext(AuthContext);
+    const { signIn, providerLogin, providerLoginGithub, loading } = useContext(AuthContext);
+
 
     const [error, setError] = useState("");
     const navigate = useNavigate();
@@ -102,7 +108,13 @@ const Login = () => {
             .catch(error => console.error(error))
     }
 
-
+    if (loading) {
+        return <div >
+            <div className='flex justify-center'>
+                <div className=' w-1/2 '><Lottie animationData={loder} loop={true} className=''></Lottie></div>
+            </div>
+        </div>
+    }
 
 
     return (

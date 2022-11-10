@@ -9,7 +9,7 @@ const Rejister = () => {
 
     useTitle('Register')
 
-    const { creatUser } = useContext(AuthContext);
+    const { creatUser, loading } = useContext(AuthContext);
     const [error, setError] = useState('');
 
     const navigate = useNavigate();
@@ -60,6 +60,11 @@ const Rejister = () => {
             });
 
 
+    }
+    if (loading) {
+        return <div class="spinner-border text-center text-5xl text-primary" role="status">
+            <span class="">Loading...</span>
+        </div>
     }
 
     return (

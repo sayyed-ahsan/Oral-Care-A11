@@ -13,9 +13,9 @@ const Home = () => {
     return (
         <div>
             <Carousel></Carousel>
-            <SectionA></SectionA>
-            <ServicesSection services={services}></ServicesSection>
             <SectionB></SectionB>
+            <ServicesSection services={services}></ServicesSection>
+            <SectionA></SectionA>
         </div>
     );
 };

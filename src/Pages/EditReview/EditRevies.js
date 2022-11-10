@@ -17,7 +17,7 @@ const EditRevies = () => {
         console.log(postReview);
 
         //------
-        fetch(`http://localhost:5000/edit/${review._id}`, {
+        fetch(`https://assignment-ii-sayyed-ahsan.vercel.app/edit/${review._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
