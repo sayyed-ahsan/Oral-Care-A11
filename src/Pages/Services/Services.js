@@ -9,6 +9,12 @@ const Services = () => {
     useTitle('Services')
     const allService = useLoaderData();
     const img = allService[1].image;
+
+    if (allService.length) {
+        return <h1 className='text-8xl text-center'>Loding...</h1>
+    }
+
+
     // console.log(img);
     return (
         <div className='grid grid-cols-3 gap-2 justify-items-center mx-1 my-8'>

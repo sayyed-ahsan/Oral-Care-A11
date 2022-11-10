@@ -19,22 +19,22 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/serviceshome')
+                loader: () => fetch('https://assignment-ii-sayyed-ahsan.vercel.app/serviceshome')
             },
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: () => fetch('http://localhost:5000/services')
+                loader: () => fetch('https://assignment-ii-sayyed-ahsan.vercel.app/services')
             },
             {
                 path: '/details/:id',
                 element: <ServiceDetail></ServiceDetail>,
-                loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-ii-sayyed-ahsan.vercel.app/details/${params.id}`),
             },
             {
                 path: '/blog',
                 element: <Blog></Blog>,
-                loader: () => fetch('http://localhost:5000/blogs')
+                loader: () => fetch('https://assignment-ii-sayyed-ahsan.vercel.app/blogs')
             },
             {
                 path: '/myreviews',
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addsevice',
-                element: <AddService></AddService>
+                element: <PrivetRout><AddService></AddService></PrivetRout>
             },
             {
                 path: '/login',
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
             {
                 path: '/edit/:id',
                 element: <EditRevies></EditRevies>,
-                loader: ({ params }) => fetch(`http://localhost:5000/edit/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-ii-sayyed-ahsan.vercel.app/edit/${params.id}`),
 
             }
         ]

@@ -35,10 +35,10 @@ const Login = () => {
                     email: user.email
                 }
 
-                console.log(currentUser);
+                // console.log(currentUser);
 
                 // get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://assignment-ii-sayyed-ahsan.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -49,9 +49,9 @@ const Login = () => {
                     .then(data => {
                         console.log(data);
                         localStorage.setItem('genius-token', data.token);
-                        navigate(from, { replace: true });
                         form.reset();
                         setError('');
+                        navigate(from, { replace: true });
                     })
 
             })
@@ -68,7 +68,7 @@ const Login = () => {
                 navigate(from, { replace: true });
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
     }
 
@@ -82,10 +82,10 @@ const Login = () => {
                     email: user.email
                 }
 
-                console.log(currentUser);
+                // console.log(currentUser);
 
                 // get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://assignment-ii-sayyed-ahsan.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -94,7 +94,7 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         localStorage.setItem('genius-token', data.token);
                         navigate(from, { replace: true });
                     });

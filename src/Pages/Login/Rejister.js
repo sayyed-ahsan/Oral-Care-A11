@@ -1,15 +1,3 @@
-// import React from 'react';
-
-// const Rejister = () => {
-//     return (
-//         <div>
-//             register pag
-//         </div>
-//     );
-// };
-
-// export default Rejister;
-
 
 
 import React, { useContext, useState } from 'react';
@@ -35,14 +23,34 @@ const Rejister = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email, password)
+        // console.log(email, password)
         creatUser(email, password).then(result => {
             const user = result.user;
-            console.log(user);
-            form.reset();
-            navigate(from, { replace: true });
 
-            setError('');
+
+            const currentUser = {
+                email: user.email
+            }
+
+            // console.log(currentUser);
+
+            // get jwt token
+            fetch('https://assignment-ii-sayyed-ahsan.vercel.app/jwt', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(currentUser)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data);
+                    localStorage.setItem('genius-token', data.token);
+                    form.reset();
+                    navigate(from, { replace: true });
+                    setError('');
+                });
+
         })
             .catch(e => {
                 console.error(e)

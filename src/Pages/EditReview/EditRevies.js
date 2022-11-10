@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/Authprovider';
 
 const EditRevies = () => {
@@ -8,6 +8,8 @@ const EditRevies = () => {
 
 
     const [service, setService] = useState({});
+
+    const navigate = useNavigate();
 
     const handleAddReview = event => {
         event.preventDefault();
@@ -26,7 +28,8 @@ const EditRevies = () => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     alert('Review updated')
-                    console.log(data);
+                    // console.log(data);
+                    navigate('/myreviews')
                 }
 
             })

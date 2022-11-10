@@ -17,7 +17,7 @@ const ServiceDetail = () => {
     console.log(allReview)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${serviceDetails._id}`)
+        fetch(`https://assignment-ii-sayyed-ahsan.vercel.app/${serviceDetails._id}`)
             .then(res => res.json())
             .then(data => {
                 setAllReview(data)
@@ -35,7 +35,7 @@ const ServiceDetail = () => {
         event.preventDefault();
         const postReview = { ...userRevies, useremail: user.email, serviceId: serviceDetails._id, serviceName: serviceDetails.sName, time: new Date() }
         console.log(postReview);
-        fetch('http://localhost:5000/review', {
+        fetch('https://assignment-ii-sayyed-ahsan.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -48,8 +48,9 @@ const ServiceDetail = () => {
                     alert('Review added successfully');
                     const newallreview = [...allReview, postReview];
                     setAllReview(newallreview)
+                    console.log(allReview)
 
-                    // event.target.reset();
+                    event.target.reset();
                 }
             })
     }
@@ -151,7 +152,7 @@ const ServiceDetail = () => {
                                     <div className="card-actions items-center ">
                                         <div className="avatar">
                                             <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                                <img src={review?.image} />
+                                                <img src={review.url} alt="" />
                                             </div>
                                         </div>
                                         <div>

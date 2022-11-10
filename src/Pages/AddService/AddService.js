@@ -15,7 +15,7 @@ const AddService = () => {
     const handleAddService = event => {
         event.preventDefault();
         console.log(service);
-        fetch('http://localhost:5000/serviceadd', {
+        fetch('https://assignment-ii-sayyed-ahsan.vercel.app/serviceadd', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -26,7 +26,7 @@ const AddService = () => {
             .then(data => {
                 if (data.acknowledged) {
                     alert('Added successfully');
-                    // event.target.reset();
+                    event.target.reset();
                 }
             })
 

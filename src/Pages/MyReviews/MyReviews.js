@@ -15,7 +15,7 @@ const MyReviews = () => {
         // console.log(id)
         const proceed = window.confirm('Are you sure ?');
         if (proceed) {
-            fetch(`http://localhost:5000/review/${id}`, {
+            fetch(`https://assignment-ii-sayyed-ahsan.vercel.app/review/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -31,7 +31,7 @@ const MyReviews = () => {
     }
     //-----------
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
+        fetch(`https://assignment-ii-sayyed-ahsan.vercel.app/myreviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('genius-token')}`
             }
@@ -86,7 +86,7 @@ const MyReviews = () => {
                                         <div className="card-actions items-center ">
                                             <div className="avatar">
                                                 <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                                    <img src={review?.image} />
+                                                    <img src={review?.url} />
                                                 </div>
                                             </div>
                                             <div>
