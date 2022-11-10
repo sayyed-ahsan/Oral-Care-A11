@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { BsFillStarFill } from 'react-icons/bs';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const Services = () => {
     useTitle('Services')
     const allService = useLoaderData();
     const img = allService[1].image;
-    console.log(img);
+    // console.log(img);
     return (
         <div className='grid grid-cols-3 gap-2 justify-items-center mx-1 my-8'>
             {
@@ -15,13 +18,31 @@ const Services = () => {
 
                         <div className="card w-90 bg-base-100 shadow-xl">
                             <figure className="px-10 pt-10">
-                                <img src="https://placeimg.com/400/225/arch" alt="Shoes" className="rounded-xl" />
+                                <PhotoProvider>
+                                    <PhotoView src={service.image}>
+                                        <img className="rounded-xl"
+                                            src={service.image} alt="" />
+                                    </PhotoView>
+                                </PhotoProvider>
                             </figure>
                             <div className="card-body items-center text-center">
-                                <h2 className="card-title">Shoes!</h2>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <h2 className="card-title">{service.sName}</h2>
+                                <p>{service.description}</p>
+                                <div>
+                                    <div className='flex justify-center items-center'>
+                                        <div>
+                                            <BsFillStarFill></BsFillStarFill>
+                                        </div>
+                                        <div className='pl-3'>
+                                            {service.rating} Star Rating
+                                        </div>
+                                    </div>
+                                </div>
+                                <p className='text-1xl text-white'>
+                                    Fee: {service.price}/= only
+                                </p>
                                 <div className="card-actions">
-                                    <Link to={'/sdetail'}>
+                                    <Link to={`/details/${service._id}`}>
                                         <button className="btn btn-outline btn-success">Show Detail</button>
                                     </Link>
                                 </div>

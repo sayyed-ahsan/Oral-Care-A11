@@ -22,14 +22,15 @@ const Header = () => {
                 <ul className="menu menu-horizontal p-0">
                     <Link to={'/'}><li><a>Home</a></li></Link>
                     <Link to={'/services'}><li><a>Servises</a></li></Link>
+                    <Link to={'/myreviews'}><li><a>My reviews</a></li></Link>
                     <Link to={'/blog'}><li><a>Blog</a></li></Link>
 
                     {
                         user ?
                             <>
-                                <Link to={'/myreviews'}><li><a>My reviews</a></li></Link>
+
                                 <Link to={'/addsevice'}><li><a>Add service</a></li></Link>
-                                <Link to={'/services'}><li><a><button onClick={handleSignOut}>Sign Out</button></a></li></Link>
+                                <Link to={'/'}><li><a><button onClick={handleSignOut}>Sign Out</button></a></li></Link>
                                 <Link to={'/myreviews'}><li>
                                     <div className="avatar">
                                         <div className="w-6 rounded-full">
