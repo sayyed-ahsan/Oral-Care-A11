@@ -2,17 +2,25 @@ import Lottie from "lottie-react";
 import React from 'react';
 import { Link } from "react-router-dom";
 import img1 from '../../images/lotti/lotiimg.json'
-import loader from '../../images/lotti/loder.json'
+import person from '../../images/lotti/person.json'
 
 const SectionA = () => {
     return (
-        <div className='my-12 flex items-center'>
+        <div>
+            <div className='my-12 flex items-center'>
+                <div className='w-5/9'><Lottie animationData={person} loop={true} ></Lottie></div>
+                <div className='w-4/9  p-10 m-5'>
+                    <h1 className='text-3xl text-sky-300'>My latest teqnologies</h1>
+                    <p className=''> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dicta quam est distinctio rerum velit cum nulla nostrum nobis animi ea laudantium, quasi quo possimus nihil sequi exercitationem? Nobis, nisi. Lorem ipsum dolor sit amet consectetur adipi </p>
+                </div>
+            </div>
 
-            <div className='w-4/9'><Lottie animationData={img1} loop={true} ></Lottie></div>
-
-            <div className='w-5/9  p-10 m-5'>
-                <h1 className='text-3xl text-sky-300'>About my <br /> Service Qualit</h1>
-                <p className=''> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dicta quam est distinctio rerum velit cum nulla nostrum nobis animi ea laudantium, quasi quo possimus nihil sequi exercitationem? Nobis, nisi. Lorem ipsum dolor sit amet consectetur adipi </p>
+            <div className='my-12 flex items-center'>
+                <div className='w-2/9  p-10 m-5'>
+                    <h1 className='text-3xl text-sky-300'>Some information about <br></br> Oral health</h1>
+                    <p className=''> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dicta quam est distinctio rerum velit cum nulla nostrum nobis animi ea laudantium, quasi quo possimus nihil sequi exercitationem? Nobis, nisi. Lorem ipsum dolor sit amet consectetur adipi </p>
+                </div>
+                <div className='w-7/9'><Lottie animationData={img1} loop={true} ></Lottie></div>
             </div>
         </div>
     );

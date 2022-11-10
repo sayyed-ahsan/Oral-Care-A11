@@ -10,7 +10,7 @@ const ServicesSection = (props) => {
 
     return (
         <div >
-            <p className='text-center text-orange-400 text-6xl'>Services</p>
+            <p className='text-center text-sky-300 text-6xl'>Services</p>
 
 
             <div className='grid grid-cols-3 gap-2 justify-items-center mx-1 my-8'>

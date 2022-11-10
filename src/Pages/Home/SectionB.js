@@ -12,7 +12,7 @@ const SectionB = () => {
                 <div className='w-5/9  p-10 m-5'>
                     <h1 className='text-3xl text-sky-300'>About my <br /> Service Qualit</h1>
                     <p className=''> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dicta quam est distinctio rerum velit cum nulla nostrum nobis animi ea laudantium, quasi quo possimus nihil sequi exercitationem? Nobis, nisi. Lorem ipsum dolor sit amet consectetur adipi </p>
-                    <h1 className='text-3xl text-sky-300'>About my <br /> Service Qualit</h1>
+                    <h1 className='text-3xl text-sky-300'>About my Self</h1>
                     <p className=''> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dicta quam est distinctio rerum velit cum nulla nostrum nobis animi ea laudantium, quasi quo possimus nihil sequi exercitationem? Nobis, nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque cum molestiae magnam consectetur veniam. Earum asperior </p>
                 </div>
             </div>
